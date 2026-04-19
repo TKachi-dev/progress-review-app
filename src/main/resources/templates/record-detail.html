@@ -9,10 +9,16 @@
     <div class="container">
         <h1>進捗詳細</h1>
 
+        <p><strong>タイトル：</strong><span th:text="${record.title}"></span> </p>
         <p><strong>日付：</strong><span th:text="${record.date}"></span></p>
         <p><strong>やったこと：</strong><span th:text="${record.didWhat}"></span></p>
         <p><strong>次やること：</strong><span th:text="${record.nextAction}"></span> </p>
         <p><strong>詰まったポイント</strong><span th:text="${record.blockedPoint}"></span></p>
+
+        <!-- 削除ボタン -->
+        <form th:action="@{/records/{id}/delete(id=${record.id})}" method="post">
+            <button type="submit">削除</button>
+        </form>
 
         <p>
             <a th:href="@{/records}" class="button">一覧へ戻る</a>

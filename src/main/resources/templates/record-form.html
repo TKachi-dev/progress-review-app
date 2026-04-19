@@ -9,7 +9,15 @@
     <div class="container">
         <h1>進捗記録登録</h1>
 
+        <!-- エラーメッセージ -->
+        <p th:if="${errorMessage}" th:text="${errorMessage}" style="color:red;"></p>
+
         <form th:action="@{/records}" th:object="${record}" method="post">
+            <div>
+                <label for="title">タイトル</label><br>
+                <input type="text" id="title" th:field="*{title}">
+            </div>
+
             <div>
                 <label for="date">日付</label><br>
                 <input type="date" id="date" th:field="*{date}">
