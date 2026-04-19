@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>進捗一覧</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <h1>進捗一覧</h1>
@@ -30,11 +31,11 @@
     </table>
 
     <p>
-        <a th:href="@{/records/new}">新しく記録する</a>
+        <a th:href="@{/records/new}" class="button">新しく記録する</a>
     </p>
 
     <p>
-        <a th:href="@{/}">ホームへ戻る</a>
+        <a th:href="@{/}" class="button">ホームへ戻る</a>
     </p>
 </body>
 </html>

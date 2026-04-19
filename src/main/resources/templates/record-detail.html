@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>進捗詳細</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <h1>進捗詳細</h1>
+    <div class="container">
+        <h1>進捗詳細</h1>
 
-    <p><strong>日付：</strong><span th:text="${record.date}"></span></p>
-    <p><strong>やったこと：</strong><span th:text="${record.didWhat}"></span></p>
-    <p><strong>つぎやること：</strong><span th:text="${record.nextAction}"></span> </p>
-    <p><strong>詰まったポイント</strong><span th:text="${record.blockedPoint}"></span></p>
+        <p><strong>日付：</strong><span th:text="${record.date}"></span></p>
+        <p><strong>やったこと：</strong><span th:text="${record.didWhat}"></span></p>
+        <p><strong>次やること：</strong><span th:text="${record.nextAction}"></span> </p>
+        <p><strong>詰まったポイント</strong><span th:text="${record.blockedPoint}"></span></p>
 
-    <p>
-        <a th:href="@{/records}">一覧へ戻る</a>
-    </p>
+        <p>
+            <a th:href="@{/records}" class="button">一覧へ戻る</a>
+        </p>
 
-    <p>
-        <a th:href="@{/}">ホームへ戻る</a>
-    </p>
+        <p>
+            <a th:href="@{/}" class="button">ホームへ戻る</a>
+        </p>
+    </div>
 </body>
 </html>

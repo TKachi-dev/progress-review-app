@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>進捗振り返りアプリ</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <h1>進捗振り返りアプリ</h1>
+    <div class="container">
+        <h1>進捗振り返りアプリ</h1>
 
-    <p>
-        <a th:href="@{/records/new}">新しく記録する</a>
-    </p>
+        <p>
+            <a th:href="@{/records/new}" class="button">新しく記録する</a>
+        </p>
 
-    <p>
-        <a th:href="@{/records}">記録一覧を見る</a>
-    </p>
+        <p>
+            <a th:href="@{/records}" class="button">記録一覧を見る</a>
+        </p>
+    </div>
 </body>
 </html>
