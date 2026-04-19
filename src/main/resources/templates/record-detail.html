@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>進捗詳細</title>
+</head>
+<body>
+    <h1>進捗詳細</h1>
+
+    <p><strong>日付：</strong><span th:text="${record.date}"></span></p>
+    <p><strong>やったこと：</strong><span th:text="${record.didWhat}"></span></p>
+    <p><strong>つぎやること：</strong><span th:text="${record.nextAction}"></span> </p>
+    <p><strong>詰まったポイント</strong><span th:text="${record.blockedPoint}"></span></p>
+
+    <p>
+        <a th:href="@{/records}">一覧へ戻る</a>
+    </p>
+
+    <p>
+        <a th:href="@{/}">ホームへ戻る</a>
+    </p>
+</body>
+</html>

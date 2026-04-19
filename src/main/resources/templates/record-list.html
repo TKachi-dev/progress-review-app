@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>進捗一覧</title>
+</head>
+<body>
+    <h1>進捗一覧</h1>
+
+    <div th:if="${#lists.isEmpty(records)}">
+        <p>記録がありません</p>
+    </div>
+
+    <table border="1" th:if="${not #lists.isEmpty(records)}">
+        <thead>
+            <tr>
+                <th>日付</th>
+                <th>やったこと</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="record : ${records}">
+                <td th:text="${record.date}"></td>
+                <td>
+                    <a th:href="@{/records/{id}(id=${record.id})}"
+                       th:text="${record.didWhat}"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a th:href="@{/records/new}">新しく記録する</a>
+    </p>
+
+    <p>
+        <a th:href="@{/}">ホームへ戻る</a>
+    </p>
+</body>
+</html>

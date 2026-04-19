@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>ホーム</title>
+    <title>進捗振り返りアプリ</title>
 </head>
 <body>
-    <h1>Hello Spring Boot!</h1>
+    <h1>進捗振り返りアプリ</h1>
+
+    <p>
+        <a th:href="@{/records/new}">新しく記録する</a>
+    </p>
+
+    <p>
+        <a th:href="@{/records}">記録一覧を見る</a>
+    </p>
 </body>
 </html>
