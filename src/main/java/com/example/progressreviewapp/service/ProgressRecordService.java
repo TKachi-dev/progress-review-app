@@ -13,4 +13,7 @@ public interface ProgressRecordService {
 
     // 1件取得
     ProgressRecord findById(Long id);
+
+    // 削除処理
+    void deleteById(Long id);
 }

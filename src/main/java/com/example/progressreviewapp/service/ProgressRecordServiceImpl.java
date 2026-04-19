@@ -27,7 +27,12 @@ public class ProgressRecordServiceImpl implements ProgressRecordService {
     }
 
     @Override
-    public  ProgressRecord findById(Long id) {
+    public ProgressRecord findById(Long id) {
         return repository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        repository.deleteById(id);
     }
 }
