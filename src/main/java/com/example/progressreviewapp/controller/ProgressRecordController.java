@@ -26,7 +26,27 @@ public class ProgressRecordController {
 
     // 登録処理
     @PostMapping
-    public String save(@ModelAttribute ProgressRecord record) {
+    public String save(@ModelAttribute ProgressRecord record, Model model) {
+
+        // 入力チェック
+        if (record.getTitle() == null || record.getTitle().trim().isEmpty()) {
+            model.addAttribute("errorMessage", "タイトルは必須です");
+            model.addAttribute("record", record);
+            return "record-form";
+        }
+
+        if (record.getDate() == null) {
+            model.addAttribute("errorMessage", "日付は必須です");
+            model.addAttribute("record", record);
+            return "record-form";
+        }
+
+        if (record.getDidWhat() == null || record.getDidWhat().trim().isEmpty()) {
+            model.addAttribute("errorMessage", "やったことは必須です");
+            model.addAttribute("record", record);
+            return "record-form";
+        }
+
         service.save(record);
         return "redirect:/records";
     }
@@ -45,5 +65,12 @@ public class ProgressRecordController {
         ProgressRecord record = service.findById(id);
         model.addAttribute("record", record);
         return "record-detail";
+    }
+
+    // 削除処理
+    @PostMapping("/{id}/delete")
+    public String delete(@PathVariable Long id) {
+        service.deleteById(id);
+        return "redirect:/records";
     }
 }
